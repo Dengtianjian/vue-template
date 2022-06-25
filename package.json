@@ -1,0 +1,33 @@
+{
+  "name": "scaffold",
+  "version": "0.1.1.Alpha.20220622",
+  "scripts": {
+    "dev": "vite --open --host",
+    "start": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host",
+    "type": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "dayjs": "^1.11.2",
+    "highlight.js": "^11.5.1",
+    "vant": "^3.4.9",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15",
+    "vuedraggable": "^4.1.0",
+    "vuedraggable-es": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/rollup-plugin-visualizer": "^4.2.1",
+    "@vitejs/plugin-vue": "^1.10.2",
+    "@vue/compiler-sfc": "^3.2.33",
+    "naive-ui": "^2.28.2",
+    "rollup-plugin-visualizer": "^5.6.0",
+    "typescript": "^4.6.4",
+    "unplugin-vue-components": "^0.19.6",
+    "vite": "^2.9.8",
+    "vite-plugin-vue-scaffold-build": "^0.1.12",
+    "vue-tsc": "^0.2.3"
+  }
+}
