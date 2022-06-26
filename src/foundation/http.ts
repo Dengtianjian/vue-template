@@ -27,7 +27,7 @@ function http<ResponseData = any>(url: string, method: TMethods, query: Record<s
   }
   const options: RequestInit = {
     headers,
-    method,
+    method: method.toUpperCase(),
     mode: "cors"
   };
 
