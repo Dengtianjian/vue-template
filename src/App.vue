@@ -17,7 +17,7 @@
       </router-view>
     </n-message-provider>
   </n-config-provider>
-  <footer class="page-footer" v-show="globalStore.showFooter">{{ version }} <a href="mailto:mail@isdtj.com">联系我们</a>
+  <footer class="page-footer">{{ version }} <a href="mailto:mail@isdtj.com">联系我们</a>
   </footer>
 </template>
 
@@ -25,7 +25,6 @@
 import { version } from "../package.json";
 import { ref } from "vue";
 import { NSpin, NConfigProvider } from "naive-ui";
-import userStore from "./store/userStore";
 import globalStore from "./store/globalStore";
 import { Toast } from "vant";
 import Request from "./foundation/Request";
