@@ -27,15 +27,10 @@ Router.beforeResolve((to, from, next) => {
 
 const menuOptions: MenuOption[] = [
   {
-    label: NaiveUI.createdRouterLinkLabel("地图", {
-      to: "/map/categories"
+    label: NaiveUI.createdRouterLinkLabel("首页", {
+      to: "/"
     }),
-    key: 'map'
-  }, {
-    label: NaiveUI.createdRouterLinkLabel("技能点", {
-      to: "/planner"
-    }),
-    key: 'planner'
+    key: 'home'
   }
 ];
 </script>

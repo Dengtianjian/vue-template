@@ -1,6 +1,6 @@
 {
   "name": "project_name",
-  "version": "0.1.2.Alpha.20221024",
+  "version": "0.1.1.Alpha.00000000",
   "scripts": {
     "dev": "vite --open --host --mode development",
     "start": "vite --host --mode development",
