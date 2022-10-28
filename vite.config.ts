@@ -2,30 +2,29 @@ import Path from "path";
 import { defineConfig, PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import V from "rollup-plugin-visualizer";
-// import build from "./plugin";
-import build from "vite-plugin-vue-scaffold-build";
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import config from "./src/config";
 
-const plugins: PluginOption[] = [
-  vue(),
-  // build({
-  //   vuePath: "//assets.cooocc.com/libs/vue.js",
-  //   buildProject: true
-  // }),
-  V({
-    filename: "dist/v.html",
-    open: process.env?.NODE_ENV === "production"
-  }),
-  Components({
-    resolvers: [NaiveUiResolver()]
-  })
-];
+export default defineConfig(({ mode }) => {
+  const plugins: PluginOption[] = [
+    vue(),
+    // @ts-ignore
+    V({
+      filename: "dist/v.html",
+      open: mode === "production"
+    }),
+    Components({
+      resolvers: [NaiveUiResolver()]
+    })
+  ];
 
-export default defineConfig(() => {
+  const base: string = mode === "production" ? `/source/plugin/${config.PluginId}/Views/dashboard` : "";
+
   return {
     plugins,
     envDir: "envs",
+    base,
     resolve: {
       alias: {
         "@Api": Path.resolve(__dirname, "src/api/modules"),
@@ -51,7 +50,6 @@ export default defineConfig(() => {
           },
           manualChunks: {
             "naive-ui": ["naive-ui"],
-            "vuedraggable-es": ["vuedraggable-es"],
             "vant": ["vant"],
             "vue": ["vue", "plugin-vue:export-helper"],
             "vite": ["vite/modulepreload-polyfill"],

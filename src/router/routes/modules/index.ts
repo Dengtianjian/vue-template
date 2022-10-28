@@ -2,8 +2,10 @@ import { RouteRecordRaw } from "vue-router";
 
 export default [
   {
-    name: "home",
+    name: "index",
     path: "/",
-    component: () => import("../../../views/home.vue")
+    component: () => import("../../../layouts/DefaultLayout.vue"),
+    // redirect: "/",
+    children: []
   }
 ] as RouteRecordRaw[]
