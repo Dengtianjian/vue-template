@@ -6,7 +6,7 @@ interface IConfig {
 }
 
 const base: IConfig = {
-  APIURL:  "http://127.0.0.2", //* 默认的请求地址
+  APIURL:  "http://127.0.0.22/index.php/plugin/Fanyi/v1", //* 默认的请求地址
   name: "脚手架Scaffold" //* 站点名称
 }
 
@@ -16,7 +16,7 @@ const development: IConfig = {
 
 const production: IConfig = {
   ...base,
-  APIURL: "https://api.cooocc.com"
+  APIURL: "https://j777it3u.72zhan.com"
 }
 
 const config: Record<string, IConfig> = {

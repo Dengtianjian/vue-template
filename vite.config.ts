@@ -13,19 +13,23 @@ const plugins: PluginOption[] = [
   //   vuePath: "//assets.cooocc.com/libs/vue.js",
   //   buildProject: true
   // }),
-  V({
-    filename: "dist/v.html",
-    open: process.env?.NODE_ENV === "production"
-  }),
+  // V({
+  //   filename: "dist/v.html",
+  //   open: process.env?.NODE_ENV === "production"
+  // }),
   Components({
     resolvers: [NaiveUiResolver()]
   })
 ];
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+  console.log(mode);
+
   return {
+    base: mode === "production" ? "https://static-api.witframe.com/Fanyi/v1/" : "/",
     plugins,
     envDir: "envs",
+    // publicDir: mode === "production" ? "https://static-api.witframe.com/Fanyi/v1/" : "/",
     resolve: {
       alias: {
         "@Api": Path.resolve(__dirname, "src/api/modules"),
@@ -39,16 +43,17 @@ export default defineConfig(() => {
     },
     build: {
       minify: false,
+      assetsDir: "static",
       rollupOptions: {
         output: {
-          chunkFileNames(chunkInfo) {
-            const firstModulePath = Object.keys(chunkInfo.modules)[0];
-            if (firstModulePath.includes("node_modules")) {
-              return `assets/js/modules/${chunkInfo.name}-[hash].js`;
-            }
+          // chunkFileNames(chunkInfo) {
+          //   const firstModulePath = Object.keys(chunkInfo.modules)[0];
+          //   if (firstModulePath.includes("node_modules")) {
+          //     return `assets/js/modules/${chunkInfo.name}-[hash].js`;
+          //   }
 
-            return `assets/js/apps/${chunkInfo.name}-[hash].js`;
-          },
+          //   return `assets/js/apps/${chunkInfo.name}-[hash].js`;
+          // },
           manualChunks: {
             "naive-ui": ["naive-ui"],
             "vuedraggable-es": ["vuedraggable-es"],
