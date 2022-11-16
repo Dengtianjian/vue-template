@@ -23,10 +23,8 @@ const plugins: PluginOption[] = [
 ];
 
 export default defineConfig(({ mode }) => {
-  console.log(mode);
-
   return {
-    base: mode === "production" ? "https://static-api.witframe.com/Fanyi/v1/" : "/",
+    base: mode === "production" ? "{api_static_uri}" : "/",
     plugins,
     envDir: "envs",
     // publicDir: mode === "production" ? "https://static-api.witframe.com/Fanyi/v1/" : "/",
