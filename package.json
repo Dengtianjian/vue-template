@@ -12,9 +12,6 @@
     "release": "vite build --mode release"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "^2.1.0",
-    "dayjs": "^1.11.5",
-    "highlight.js": "^11.6.0",
     "vant": "^3.6.4",
     "vue": "^3.2.41",
     "vue-router": "^4.1.5"

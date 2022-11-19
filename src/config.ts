@@ -10,8 +10,8 @@ interface IConfig {
 const base: IConfig = {
   URL: "http://127.0.0.20",
   APIURL: "http://127.0.0.20/plugin.php?id=tj_emrpg", //* 默认的请求地址
-  name: "脚手架Scaffold", //* 站点名称
-  PluginId: "tj_emrpg"
+  name: "project_name", //* 站点名称
+  PluginId: "plugin_id"
 }
 
 const development: IConfig = {

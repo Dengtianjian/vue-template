@@ -1,4 +1,4 @@
-import helper from "./helper";
+import helper from "../helper";
 
 type TMethods = "GET" | "POST" | "OPTIONS" | "HEAD" | "DELETE" | "PUT" | "PATCH";
 
@@ -86,28 +86,28 @@ function http<ResponseData = any>(url: string, method: TMethods, query: Record<s
         responseBody['result'] = true;
         resolve(responseBody);
       }
-    });
+    }).catch(reject);
   });
 }
 
 export function get<ResponseData = any>(url: string, query: Record<string, string>, headers: Record<string, string> = {}) {
-  return http(url, "GET", query, null, headers);
+  return http<ResponseData>(url, "GET", query, null, headers);
 }
 
 export function post<ResponseData = any>(url: string, body: BodyInit | object | Array<any> | null = null, query: Record<string, string>, headers: Record<string, string> = {}) {
-  return http(url, "POST", query, body, headers);
+  return http<ResponseData>(url, "POST", query, body, headers);
 }
 
 export function put<ResponseData = any>(url: string, body: BodyInit | object | Array<any> | null = null, query: Record<string, string>, headers: Record<string, string> = {}) {
-  return http(url, "PUT", query, body, headers);
+  return http<ResponseData>(url, "PUT", query, body, headers);
 }
 
 export function patch<ResponseData = any>(url: string, body: BodyInit | object | Array<any> | null = null, query: Record<string, string>, headers: Record<string, string> = {}) {
-  return http(url, "PATCH", query, body, headers);
+  return http<ResponseData>(url, "PATCH", query, body, headers);
 }
 
 export function del<ResponseData = any>(url: string, body: BodyInit | object | Array<any> | null = null, query: Record<string, string>, headers: Record<string, string> = {}) {
-  return http(url, "DELETE", query, body, headers);
+  return http<ResponseData>(url, "DELETE", query, body, headers);
 }
 
 export default http;

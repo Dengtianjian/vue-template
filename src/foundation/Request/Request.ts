@@ -1,4 +1,4 @@
-import config from "../config";
+import config from "../../config";
 import { Toast } from "vant";
 import http, { IResponse } from "./http";
 
@@ -53,7 +53,7 @@ class Request {
       }
     }
   }
-  send<ResponseData>(uri: string | string[] = "", method: TMethods = "GET", query: Record<string, string> = {}, body: BodyInit | object | null = null): Promise<ResponseData> {
+  send<ResponseData>(uri: string | string[] = "", method: TMethods = "GET", query: Record<string, string> = {}, body: BodyInit | object | null = null, header: Record<string, string> = {}): Promise<ResponseData> {
     if (this.#pipes.length) {
       if (method === "GET") {
         query['_pipes'] = this.#pipes.join(",");
@@ -66,7 +66,7 @@ class Request {
       }
     }
 
-    const headers = {}
+    const headers = header ?? {};
     if (localStorage.getItem("F_Token")) {
       headers["Authorization"] = `Bearer ${localStorage.getItem("F_Token")}`;
     }
