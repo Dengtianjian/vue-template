@@ -53,9 +53,7 @@ export default defineConfig(({ mode }) => {
             "vant": ["vant"],
             "vue": ["vue", "plugin-vue:export-helper"],
             "vite": ["vite/modulepreload-polyfill"],
-            "vue-router": ["vue-router"],
-            "dayjs": ["dayjs"],
-            "highlight": ["highlight.js"]
+            "vue-router": ["vue-router"]
           }
         }
       }
