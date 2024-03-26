@@ -6,6 +6,12 @@ export default [
     path: "/",
     component: () => import("../../../layouts/DefaultLayout.vue"),
     // redirect: "/",
-    children: []
+    children: [
+      {
+        name: "home",
+        path: "",
+        component: () => import("../../../views/home.vue")
+      }
+    ]
   }
 ] as RouteRecordRaw[]
