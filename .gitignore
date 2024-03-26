@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 *.local
+Ruyi
 
 # 产出
 components_dist

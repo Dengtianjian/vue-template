@@ -1,14 +1,17 @@
-import { h, reactive, RendererElement, RendererNode, VNode } from "vue";
+import { reactive } from "vue";
 
-function renderIcon(className: string) {
-  return () => h("i", {
-    className
-  })
-}
 const globalStore = reactive<{
-  consoleErrorCount: number //* 控制台错误数量
+  latestError: {
+    statusCode: number,
+    code: string | number,
+    message: string
+  }
 }>({
-  consoleErrorCount: 0
-})
+  latestError: {
+    statusCode: null,
+    code: null,
+    message: null
+  }
+});
 
 export default globalStore

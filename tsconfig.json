@@ -10,7 +10,6 @@
     "emitDecoratorMetadata": true,
     "useDefineForClassFields": true,
     "moduleResolution": "Node",
-    "charset": "utf8",
     "allowJs": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -22,33 +21,12 @@
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": false,
     "resolveJsonModule": true,
-    "paths": {
-      "@Api": [
-        "./src/api/modules"
-      ],
-      "@CommonComponents": [
-        "./src/components/common"
-      ],
-      "@FrontComponents": [
-        "./src/components/front"
-      ],
-      "@FrontViews": [
-        "./src/views/front"
-      ],
-      "@Service": [
-        "./src/service"
-      ],
-      "@SystemViews": [
-        "./src/views/system"
-      ]
-    },
+    "paths": {},
     "types": [
       "naive-ui/volar"
     ]
   },
   "exclude": [
-    "app/public",
-    "app/views",
     "node_modules*",
     "dist",
     "public",
